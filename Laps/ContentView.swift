@@ -1,6 +1,19 @@
 import SwiftUI
 import Combine
 
+extension Date {
+    var elapsedTime: String {
+        let components = Calendar.current.dateComponents([.minute, .second, .nanosecond], from: self, to: Date())
+        let date =  Calendar.current.date(from: components)!
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar.current
+        dateFormatter.dateFormat = "mm:ss,SS"
+
+        return dateFormatter.string(from: date)
+    }
+}
+
 class StopWatchViewModel: ObservableObject {
     private var isRunning: Bool = false {
         willSet {
@@ -8,11 +21,13 @@ class StopWatchViewModel: ObservableObject {
         }
     }
 
-    private var currentTime: Float = 0 {
+    private var startDate: Date? = nil {
         willSet {
             objectWillChange.send()
         }
     }
+
+    private var timer = Timer()
 
     let objectWillChange = PassthroughSubject<Void, Never>()
 
@@ -25,7 +40,8 @@ class StopWatchViewModel: ObservableObject {
     }
 
     var timeLabelText: String {
-        return "\(currentTime)"
+        guard let startDate = startDate else {  return "00:00,00" }
+        return startDate.elapsedTime
     }
 
     func startButtonAction() {
@@ -48,11 +64,13 @@ class StopWatchViewModel: ObservableObject {
 
     private func start() {
         print("starting")
-        currentTime = 100
+        startDate = Date()
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
 
     private func stop() {
         print("stopping")
+        timer.invalidate()
     }
 
     private func saveLap() {
@@ -61,7 +79,11 @@ class StopWatchViewModel: ObservableObject {
 
     private func reset() {
         print("reseting")
-        currentTime = 0
+        startDate = nil
+    }
+
+    @objc private func updateTimer() {
+        objectWillChange.send()
     }
 }
 
