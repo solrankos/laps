@@ -8,29 +8,7 @@ struct ContentView: View {
         GeometryReader { geometry in
             VStack(alignment: .center, spacing: 10) {
                 VStack(alignment: .center, spacing: 10) {
-                    HStack(alignment: .center, spacing: 1) {
-                        Text(self.viewModel.hoursText)
-                        Text(":")
-                        Text(self.viewModel.minutesText)
-                        Text(":")
-                        Text(self.viewModel.secondsText)
-                        Text(",")
-                        Text(self.viewModel.fractionsText)
-                    }
-
-                    HStack(alignment: .center, spacing: 10) {
-                        Button(action: {
-                            self.viewModel.startButtonAction()
-                        }) {
-                            Text(self.viewModel.startButtonText)
-                        }
-
-                        Button(action: {
-                            self.viewModel.lapButtonAction()
-                        }) {
-                            Text(self.viewModel.lapButtonText)
-                        }
-                    }
+                    StopwatchView(viewModel: self.viewModel)
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height / 2)
 
@@ -38,15 +16,7 @@ struct ContentView: View {
 
                 VStack(alignment: .center, spacing: 10) {
                     List(self.viewModel.laps) { lap in
-                        HStack(alignment: .center, spacing: 1) {
-                            Text(lap.time.hours.leadingZeroString)
-                            Text(":")
-                            Text(lap.time.minutes.leadingZeroString)
-                            Text(":")
-                            Text(lap.time.seconds.leadingZeroString)
-                            Text(",")
-                            Text(lap.time.fractions.leadingZeroString)
-                        }
+                        LapRowView(lap: lap)
                     }
                 }
             }

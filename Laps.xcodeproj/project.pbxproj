@@ -12,6 +12,8 @@
 		634E287B23F041910087AA58 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E287123F03FA10087AA58 /* Time.swift */; };
 		634E287C23F041940087AA58 /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E287323F03FC00087AA58 /* Lap.swift */; };
 		634E287E23F0500F0087AA58 /* Int+StringTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E287D23F0500F0087AA58 /* Int+StringTransformation.swift */; };
+		634E288023F052AC0087AA58 /* LapRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E287F23F052AC0087AA58 /* LapRowView.swift */; };
+		634E288223F052EB0087AA58 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E288123F052EB0087AA58 /* StopwatchView.swift */; };
 		63519E2623E6D4750078D8E1 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2523E6D4750078D8E1 /* Stopwatch.swift */; };
 		63519E2723E6D6420078D8E1 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2523E6D4750078D8E1 /* Stopwatch.swift */; };
 		635424DE23E19E4D00AC7E02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635424DD23E19E4D00AC7E02 /* AppDelegate.swift */; };
@@ -46,6 +48,8 @@
 		634E287123F03FA10087AA58 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		634E287323F03FC00087AA58 /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
 		634E287D23F0500F0087AA58 /* Int+StringTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+StringTransformation.swift"; sourceTree = "<group>"; };
+		634E287F23F052AC0087AA58 /* LapRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapRowView.swift; sourceTree = "<group>"; };
+		634E288123F052EB0087AA58 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		63519E2523E6D4750078D8E1 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		635424DA23E19E4D00AC7E02 /* Laps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Laps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635424DD23E19E4D00AC7E02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				635424E123E19E4D00AC7E02 /* ContentView.swift */,
+				634E287F23F052AC0087AA58 /* LapRowView.swift */,
+				634E288123F052EB0087AA58 /* StopwatchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,10 +350,12 @@
 				634E287223F03FA10087AA58 /* Time.swift in Sources */,
 				6354250E23E2F55300AC7E02 /* StopwatchViewModel.swift in Sources */,
 				63519E2623E6D4750078D8E1 /* Stopwatch.swift in Sources */,
+				634E288023F052AC0087AA58 /* LapRowView.swift in Sources */,
 				635424DE23E19E4D00AC7E02 /* AppDelegate.swift in Sources */,
 				635424E023E19E4D00AC7E02 /* SceneDelegate.swift in Sources */,
 				634E287E23F0500F0087AA58 /* Int+StringTransformation.swift in Sources */,
 				635424E223E19E4D00AC7E02 /* ContentView.swift in Sources */,
+				634E288223F052EB0087AA58 /* StopwatchView.swift in Sources */,
 				634E287423F03FC00087AA58 /* Lap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
