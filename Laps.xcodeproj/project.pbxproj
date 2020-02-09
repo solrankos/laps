@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63519E2623E6D4750078D8E1 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2523E6D4750078D8E1 /* Stopwatch.swift */; };
+		63519E2723E6D6420078D8E1 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63519E2523E6D4750078D8E1 /* Stopwatch.swift */; };
 		635424DE23E19E4D00AC7E02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635424DD23E19E4D00AC7E02 /* AppDelegate.swift */; };
 		635424E023E19E4D00AC7E02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635424DF23E19E4D00AC7E02 /* SceneDelegate.swift */; };
 		635424E223E19E4D00AC7E02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635424E123E19E4D00AC7E02 /* ContentView.swift */; };
 		635424E423E19E4F00AC7E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635424E323E19E4F00AC7E02 /* Assets.xcassets */; };
 		635424E723E19E4F00AC7E02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635424E623E19E4F00AC7E02 /* Preview Assets.xcassets */; };
 		635424EA23E19E4F00AC7E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635424E823E19E4F00AC7E02 /* LaunchScreen.storyboard */; };
-		635424F523E19E4F00AC7E02 /* LapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635424F423E19E4F00AC7E02 /* LapsTests.swift */; };
+		635424F523E19E4F00AC7E02 /* StopwatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635424F423E19E4F00AC7E02 /* StopwatchTest.swift */; };
 		6354250023E19E4F00AC7E02 /* LapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635424FF23E19E4F00AC7E02 /* LapsUITests.swift */; };
+		6354250E23E2F55300AC7E02 /* StopwatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6354250D23E2F55300AC7E02 /* StopwatchViewModel.swift */; };
+		6354251023E2F5B800AC7E02 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6354250F23E2F5B800AC7E02 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63519E2523E6D4750078D8E1 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		635424DA23E19E4D00AC7E02 /* Laps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Laps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635424DD23E19E4D00AC7E02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635424DF23E19E4D00AC7E02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,11 +49,13 @@
 		635424E923E19E4F00AC7E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		635424EB23E19E4F00AC7E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		635424F023E19E4F00AC7E02 /* LapsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LapsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		635424F423E19E4F00AC7E02 /* LapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapsTests.swift; sourceTree = "<group>"; };
+		635424F423E19E4F00AC7E02 /* StopwatchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTest.swift; sourceTree = "<group>"; };
 		635424F623E19E4F00AC7E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		635424FB23E19E4F00AC7E02 /* LapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		635424FF23E19E4F00AC7E02 /* LapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapsUITests.swift; sourceTree = "<group>"; };
 		6354250123E19E4F00AC7E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6354250D23E2F55300AC7E02 /* StopwatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewModel.swift; sourceTree = "<group>"; };
+		6354250F23E2F5B800AC7E02 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +113,9 @@
 				635424E823E19E4F00AC7E02 /* LaunchScreen.storyboard */,
 				635424EB23E19E4F00AC7E02 /* Info.plist */,
 				635424E523E19E4F00AC7E02 /* Preview Content */,
+				6354250D23E2F55300AC7E02 /* StopwatchViewModel.swift */,
+				6354250F23E2F5B800AC7E02 /* DateExtension.swift */,
+				63519E2523E6D4750078D8E1 /* Stopwatch.swift */,
 			);
 			path = Laps;
 			sourceTree = "<group>";
@@ -121,7 +131,7 @@
 		635424F323E19E4F00AC7E02 /* LapsTests */ = {
 			isa = PBXGroup;
 			children = (
-				635424F423E19E4F00AC7E02 /* LapsTests.swift */,
+				635424F423E19E4F00AC7E02 /* StopwatchTest.swift */,
 				635424F623E19E4F00AC7E02 /* Info.plist */,
 			);
 			path = LapsTests;
@@ -267,6 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6354250E23E2F55300AC7E02 /* StopwatchViewModel.swift in Sources */,
+				63519E2623E6D4750078D8E1 /* Stopwatch.swift in Sources */,
+				6354251023E2F5B800AC7E02 /* DateExtension.swift in Sources */,
 				635424DE23E19E4D00AC7E02 /* AppDelegate.swift in Sources */,
 				635424E023E19E4D00AC7E02 /* SceneDelegate.swift in Sources */,
 				635424E223E19E4D00AC7E02 /* ContentView.swift in Sources */,
@@ -277,7 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635424F523E19E4F00AC7E02 /* LapsTests.swift in Sources */,
+				635424F523E19E4F00AC7E02 /* StopwatchTest.swift in Sources */,
+				63519E2723E6D6420078D8E1 /* Stopwatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
