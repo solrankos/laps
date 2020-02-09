@@ -23,14 +23,35 @@ struct StopwatchView: View {
                 Button(action: {
                     self.viewModel.startButtonAction()
                 }) {
-                    Text(self.viewModel.startButtonText)
+                    HStack{
+                        Image(systemName: self.viewModel.startButtonImageName).resizable().frame(width: 20.0, height: 20.0)
+
+                        Text(self.viewModel.startButtonText)
+                        .fontWeight(.semibold)
+                        .font(.title)
+                    }
                 }
+                .padding()
+                .background(self.viewModel.startButtonColor)
+                .cornerRadius(40)
+                .foregroundColor(Color.white)
 
                 Button(action: {
                     self.viewModel.lapButtonAction()
                 }) {
+                    HStack{
+                    Image(systemName: self.viewModel.lapButtonImageName).resizable().frame(width: 20.0, height: 20.0)
+
                     Text(self.viewModel.lapButtonText)
+                    .fontWeight(.semibold)
+                    .font(.title)
+                    }
                 }
+                .padding()
+                .background(Color.black)
+                .cornerRadius(40)
+                .foregroundColor(Color.white)
+                
             }
         }
     }

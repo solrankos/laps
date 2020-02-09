@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import SwiftUI
 
 class StopwatchViewModel: ObservableObject {
     private var subscribers: [AnyCancellable?] = []
@@ -11,7 +12,12 @@ class StopwatchViewModel: ObservableObject {
     @Published var fractionsText: String = ""
 
     @Published var startButtonText: String = ""
+    @Published var startButtonColor: Color = .green
+    @Published var startButtonImageName: String = ""
+
     @Published var lapButtonText: String = ""
+    @Published var lapButtonImageName: String = ""
+
     @Published var laps: [Lap] = []
 
     init() {
@@ -23,7 +29,12 @@ class StopwatchViewModel: ObservableObject {
         })
         subscribers.append(stopwatch.$isRunning.sink { [weak self] isRunning in
             self?.startButtonText = isRunning ? "Stop" : "Start"
+            self?.startButtonColor = isRunning ? .red : .green
+            self?.startButtonImageName = isRunning ? "stop.circle" : "stopwatch"
+
+
             self?.lapButtonText = isRunning ? "Varv" : "Nollställ"
+            self?.lapButtonImageName = isRunning ? "flag" : "xmark.circle"
         })
     }
 
