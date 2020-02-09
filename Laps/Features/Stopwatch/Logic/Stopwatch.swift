@@ -31,12 +31,12 @@ class Stopwatch: ObservableObject {
             time.fractions = 0
         }
 
-        if time.seconds > 60 {
+        if time.seconds > 59 {
             time.minutes += 1
             time.seconds = 0
         }
 
-        if time.minutes > 60 {
+        if time.minutes > 59 {
             time.hours += 1
             time.minutes = 0
         }
