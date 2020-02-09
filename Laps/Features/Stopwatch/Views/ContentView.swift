@@ -39,13 +39,13 @@ struct ContentView: View {
                 VStack(alignment: .center, spacing: 10) {
                     List(self.viewModel.laps) { lap in
                         HStack(alignment: .center, spacing: 1) {
-                            Text(String(format: "%02d", lap.time.hours))
+                            Text(lap.time.hours.leadingZeroString)
                             Text(":")
-                            Text(String(format: "%02d", lap.time.minutes))
+                            Text(lap.time.minutes.leadingZeroString)
                             Text(":")
-                            Text(String(format: "%02d", lap.time.seconds))
+                            Text(lap.time.seconds.leadingZeroString)
                             Text(",")
-                            Text(String(format: "%02d", lap.time.fractions))
+                            Text(lap.time.fractions.leadingZeroString)
                         }
                     }
                 }

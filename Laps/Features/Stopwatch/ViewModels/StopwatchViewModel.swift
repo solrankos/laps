@@ -16,10 +16,10 @@ class StopwatchViewModel: ObservableObject {
 
     init() {
         subscribers.append(stopwatch.$time.sink { [weak self] time in
-            self?.hoursText = String(format: "%02d", time.hours)
-            self?.minutesText = String(format: "%02d", time.minutes)
-            self?.secondsText = String(format: "%02d", time.seconds)
-            self?.fractionsText = String(format: "%02d", time.fractions)
+            self?.hoursText = time.hours.leadingZeroString
+            self?.minutesText = time.minutes.leadingZeroString
+            self?.secondsText = time.seconds.leadingZeroString
+            self?.fractionsText = time.fractions.leadingZeroString
         })
         subscribers.append(stopwatch.$isRunning.sink { [weak self] isRunning in
             self?.startButtonText = isRunning ? "Stop" : "Start"
