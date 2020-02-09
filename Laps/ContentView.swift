@@ -19,6 +19,10 @@ struct ContentView: View {
             }) {
                 Text(self.stopWatchViewModel.lapButtonText)
             }
+
+            List(self.stopWatchViewModel.laps) { lap in
+                Text(lap.text)
+            }
         }
     }
 }

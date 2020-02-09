@@ -4,15 +4,11 @@ import Combine
 // TODO: unit test
 // TODO: make observable
 // TODO: add lap logic
-
-struct Lap {
-    let elapsedTimeDateComponents: DateComponents
-}
+// TODO: remove debug prints
 
 class Stopwatch: ObservableObject {
     @Published private(set) var isRunning: Bool = false
     @Published private(set) var elapsedTimeDateComponents: DateComponents? = nil
-    @Published private(set) var laps: [Lap] = []
 
     public private(set) var startDate: Date? = nil
     private var timer = Timer()
@@ -30,22 +26,11 @@ class Stopwatch: ObservableObject {
         self.isRunning = false
     }
 
-    func saveLap() {
-        print("saving lap")
-
-        if isRunning == true {
-            if let elapsedTimeDateComponents = elapsedTimeDateComponents {
-                laps.append(Lap(elapsedTimeDateComponents: elapsedTimeDateComponents))
-            }
-        }
-    }
-
     func reset() {
         print("reseting")
         if isRunning == false {
             self.startDate = nil
             elapsedTimeDateComponents = nil
-            laps = []
         }
     }
 
