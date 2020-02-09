@@ -1,15 +1,9 @@
 import Foundation
 import Combine
 
-struct Lap: Identifiable {
-    let id = UUID()
-    let text: String
-}
-
 class StopwatchViewModel: ObservableObject {
     private var subscribers: [AnyCancellable?] = []
     private let stopwatch = Stopwatch()
-    private let formatter = DateFormatter()
 
     @Published var startButtonText: String = ""
     @Published var lapButtonText: String = ""
@@ -17,12 +11,8 @@ class StopwatchViewModel: ObservableObject {
     @Published var laps: [Lap] = []
 
     init() {
-        subscribers.append(stopwatch.$elapsedTimeDateComponents.sink { [weak self] components in
-            if let text = self?.formatter.formatForStopwatchDisplay(components: components) {
-                self?.timeLabelText = text
-            } else {
-                self?.timeLabelText = "00:00,00"
-            }
+        subscribers.append(stopwatch.$time.sink { [weak self] time in
+            self?.timeLabelText = "\(time.hours):\(time.minutes):\(time.seconds),\(time.fractions)"
         })
         subscribers.append(stopwatch.$isRunning.sink { [weak self] isRunning in
             self?.startButtonText = isRunning ? "Stop" : "Start"
@@ -54,9 +44,7 @@ class StopwatchViewModel: ObservableObject {
     }
 
     private func saveLap() {
-        if let text = formatter.formatForStopwatchDisplay(components: stopwatch.elapsedTimeDateComponents) {
-            self.laps.append(Lap(text: text))
-        }
+        self.laps.append(Lap(time: stopwatch.time))
     }
 }
 

@@ -23,9 +23,9 @@ class StopwatchTest: XCTestCase {
 
         XCTAssertTrue(stopwatch.isRunning)
 
-        let componentsExp = expectation(description: "elapsed time should emit")
-        subscribers.append(stopwatch.$elapsedTimeDateComponents.sink { components in
-            componentsExp.fulfill()
+        let timeExp = expectation(description: "elapsed time should emit")
+        subscribers.append(stopwatch.$time.sink { time in
+            timeExp.fulfill()
         })
 
         waitForExpectations(timeout: 10)
@@ -39,7 +39,7 @@ class StopwatchTest: XCTestCase {
 
         XCTAssertFalse(stopwatch.isRunning)
     }
-
+//
     func testReset() {
         let stopwatch = Stopwatch()
 
@@ -53,7 +53,7 @@ class StopwatchTest: XCTestCase {
         stopwatch.stop()
         stopwatch.reset()
 
-        XCTAssertNil(stopwatch.elapsedTimeDateComponents)
+
         XCTAssertFalse(stopwatch.isRunning)
     }
 }
